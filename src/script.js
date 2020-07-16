@@ -1,5 +1,5 @@
 var input = require('fs').readFileSync('./numbers.txt', 'utf8');
-var lines = input.split('\r\n'); //windows
+var lines = input.split('\r\n'); //Windows
 
 function main() {
   let testCase = 0;
@@ -8,31 +8,19 @@ function main() {
 
     const l = lines.shift();
     if (l[0] === '0') return;
-
-    let [howManyNumbers, queries] = l.split(' ');
-    howManyNumbers = parseInt(howManyNumbers);
+    let [number, queries] = l.split(' ');
+    number = parseInt(number);
     queries = parseInt(queries);
 
-    //lê e insere
-    let numbers = new Map();
-    numbers.set(-10, 0);
-    for (let i = 0; i < howManyNumbers; i++) {
-      const element = parseInt(lines.shift());
-      // console.log(`numbers.has(${element}):${numbers.has(element)}`);
-      if (numbers.has(element)) {
-        numbers.set(element, numbers.get(element) + 1);
-        continue;
-      }
-      numbers.set(element, 1);
+    //lê e empilha
+    let vector = [];
+    for (let i = 0; i < number; i++) {
+      const element = lines.shift();
+      vector.push(parseInt(element));
     }
 
-    //cria novo mapa ordenado
-    let sortedNumbers = new Map([...numbers.entries()].sort());
-
-    //está ordenado. Preciso contar as repetições (PD)
-    for (let i = 1; i < numbers.length; i++) {
-      numbers.set(element, sortedNumbers.get(element - 1) + 1);
-    }
+    //ordena
+    vector.sort((a, b) => a - b);
 
     //consultas
     console.log('Iteração %d:', testCase);
@@ -40,15 +28,16 @@ function main() {
       //lê consulta atual:
       const currentQuery = parseInt(lines.shift());
       //resposta:
-
-      if (!numbers.has(currentQuery)) {
+      const answer = 1 + vector.indexOf(currentQuery);
+      if (answer === 0) {
         console.log(`%d não está na lista.`, currentQuery);
         continue;
       }
-      const found = numbers.get(currentQuery);
-      console.log('%d está na posição %d.', currentQuery, found);
+      console.log('%d está na posição %d.', currentQuery, answer);
     }
   }
 }
 
 main();
+
+console.log();
