@@ -1,7 +1,9 @@
-var input = require('fs').readFileSync('./numbers.txt', 'utf8');
-var lines = input.split('\r\n'); //Windows
+const { PerformanceObserver, performance } = require('perf_hooks');
 
-//criando método de busca binária (com repetição)
+var input = require('fs').readFileSync('./numbers.txt', 'utf8');
+var lines = input.split('\r\n'); //windows
+
+//criando método de busca binária
 Array.prototype.buscaBinaria = function (procurado) {
   let de = 0,
     ate = this.length - 1;
@@ -90,6 +92,9 @@ function main() {
   }
 }
 
-main();
+let t0 = performance.now();
 
-console.log();
+main(); // <---- Measuring time of function
+
+let t1 = performance.now();
+console.log('\n\t» It took ' + (t1 - t0) + ' ms.');

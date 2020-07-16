@@ -1,5 +1,7 @@
+const { PerformanceObserver, performance } = require('perf_hooks');
+
 var input = require('fs').readFileSync('./numbers.txt', 'utf8');
-var lines = input.split('\r\n'); //Windows
+var lines = input.split('\r\n'); //windows
 
 function main() {
   let testCase = 0;
@@ -38,6 +40,9 @@ function main() {
   }
 }
 
-main();
+let t0 = performance.now();
 
-console.log();
+main(); // <---- Measuring time of function
+
+let t1 = performance.now();
+console.log('\n\t» It took ' + (t1 - t0) + ' ms.');
