@@ -40,9 +40,9 @@ function main() {
   }
 }
 
-let t0 = performance.now();
+const time0 = performance.now();
 
 main(); // <---- Measuring time of function
 
-let t1 = performance.now();
-console.log('\n\t» It took ' + (t1 - t0) + ' ms.');
+const time1 = performance.now();
+console.log('\n\t» It took ' + (time1 - time0) + ' ms.');

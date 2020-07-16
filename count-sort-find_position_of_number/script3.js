@@ -28,7 +28,7 @@ function main() {
       numbers.set(element, 1);
     }
 
-    //cria novo mapa ordenado
+    //cria novo map ordenado
     let sortedNumbers = new Map(
       [...numbers.entries()].sort((a, b) => a[0] - b[0])
     );
@@ -60,9 +60,9 @@ function main() {
   }
 }
 
-let t0 = performance.now();
+const time0 = performance.now();
 
 main(); // <---- Measuring time of function
 
-let t1 = performance.now();
-console.log('\n\t» It took ' + (t1 - t0) + ' ms.');
+const time1 = performance.now();
+console.log('\n\t» It took ' + (time1 - time0) + ' ms.');
