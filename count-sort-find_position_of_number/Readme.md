@@ -1,11 +1,11 @@
 Criando e comparando diferentes scripts que realizam a seguinte tarefa:
-- 1) Leitura de diversos números inteiros, ordenando-os em uma lista;
-- 2) Leitura de diversos números, consultando se existem na lista e, se existem, informar qual a posição de sua primeira ocorrência;
+1) Leitura de diversos números inteiros, ordenando-os em uma lista;
+2) Leitura de diversos números, consultando se existem na lista e, se existem, informar qual a posição de sua primeira ocorrência;
 
 Para fazer isso, os scripts criados seguem o seguinte protocolo:
 - Lêem 2 números (separados por um espaço):
-  - O primeiro indica a quantidade de números a serem inseridos na lista.
-  - O segundo indica a quantidade de consultas a essa lista;
+  - O 1º indica a quantidade de números a serem inseridos na lista.
+  - O 2º indica a quantidade de consultas a essa lista;
 - Lêem os números a serem inseridos na lista, um por linha
 - Lêem os números a serem consultados na lista, um por linha
 - Retornam ao primeiro passo, porém finaliza quando for digitado 0 nesse passo
