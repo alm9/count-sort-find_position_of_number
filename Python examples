@@ -1,0 +1,38 @@
+#02455
+l = input()
+p1, c1, p2, c2 = l.split(" ")
+a = int(p1)*int(c1)
+b = int(p2)*int(c2)
+#print(p1,c1,p2,c2)
+if (a==b):
+  print("0")
+else:
+  if (a<b):
+    print(1)
+  else: print(-1)
+  
+#02058
+print( int(input())-2)  
+
+#02591
+def contar(s,x):
+  #print("s = ",s)
+  return len(s) - x
+
+def resultado(a,b):
+  print("k", end="")
+  x=0
+  #print(a,b)
+  for x in range(a*b):
+    print("a", end="")
+  print()
+
+c = int(input())
+for cabo in range(c):
+  kamehameha = input()
+  parte1, parte2 = kamehameha.split('k')
+  a = contar(parte1,3)
+  b = contar(parte2,2)
+  resultado(a,b)
+
+
